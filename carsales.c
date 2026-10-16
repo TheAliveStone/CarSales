@@ -17,6 +17,31 @@ void displayCars(const float prices[], const int quantities[]) {
     printf("13. Volvo XC40: $%.2f, Quantity: %d\n", prices[12], quantities[12]);
 }
 
+char menu() {
+    char option;
+    printf("Select an option: (a, b, c, d or e(xit):");
+    printf("a. Browse cars:");
+    printf("b. Compare cars:");
+    printf("c. Buy a car:");
+    printf("d. View purchasing history:");
+    printf("e. xit");
+    scanf(" %c", &option);
+
+    switch (option)
+    {
+    case 'a':
+        return 'a';
+    case 'b':
+        return 'b';
+    case 'c':
+        return 'c';
+    case 'd':
+        return 'd';
+    case 'e':
+        return 'e';
+    }
+
+}
 
 int main() {
     const float prices[] = {
@@ -54,7 +79,7 @@ int main() {
     scanf("%d", &budget);
     printf("You have %d to spend.\n", budget);
 
-    displayCars(prices, quantities);
+    menu();
 
     printf("\nWhich car would you like? (Enter the number) ");
     scanf("%d", &choice);
